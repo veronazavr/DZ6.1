@@ -21,26 +21,26 @@ public class StatsService {
 
     public int calculateMaxMonth(int[] array) {
         int max = 0;
-        int month = 0;
+        int count = 0;
         int maxMonth = 0;
         for (int purchases : array) {
-            month +=1;
+            count +=1;
             if (max<=purchases) {
               max=purchases;
-              maxMonth = month;
+              maxMonth = count;
           }
         }
         return maxMonth;
     }
     public int calculateMinMonth(int[] array) {
-        int min = 8;
-        int month = 0;
+        int min = array[0];
+        int count = 0;
         int minMonth = 0;
         for (int purchases : array) {
-            month +=1;
+            count +=1;
             if (min>purchases) {
                 min=purchases;
-                minMonth = month;
+                minMonth = count;
 
             }
         }
