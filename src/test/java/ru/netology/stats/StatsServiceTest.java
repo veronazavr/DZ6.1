@@ -5,66 +5,62 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StatsServiceTest {
-    @Test
-    void shouldCalculateTest() {
-        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-
-        for (int item : purchases) {
-            System.out.println(item);
-        }
-    }
 
     @Test
-    void shouldCalculateSum() {
-        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        StatsService service = new StatsService();
-        int actual = service.calculateSum(purchases);
-        int expected = 180;
-        assertEquals(expected, actual);
-    }
+void CountAmountOfPurchases() {
+    StatsService service = new StatsService();
+    int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    int actual = service.allAmount(purchases);
+    int expected = 180;
+    assertEquals(expected, actual);
+}
+
     @Test
-    void shouldCalculateMiddle() {
-        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    void CountAverageOfPurchases() {
         StatsService service = new StatsService();
-        int actual = service.calculateMiddle(purchases);
+        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int actual = service.amountAverage(purchases);
         int expected = 15;
         assertEquals(expected, actual);
     }
+
     @Test
-    void shouldCalculateMaxMonth() {
-        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    void monthMaxPurchases() {
         StatsService service = new StatsService();
-        int actual = service.calculateMaxMonth(purchases);
+        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int actual = service.monthMax(purchases);
         int expected = 8;
         assertEquals(expected, actual);
     }
+
     @Test
-    void shouldCalculateMinMonth() {
-        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    void monthMinPurchases() {
         StatsService service = new StatsService();
-        int actual = service.calculateMinMonth(purchases);
+        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int actual = service.monthMin(purchases);
         int expected = 9;
         assertEquals(expected, actual);
     }
+
     @Test
-    void shouldCalculateNumberOfMinMonth() {
-        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    void amountMinAverage() {
         StatsService service = new StatsService();
-        int actual = service.calculateNumberOfMinMonth(purchases);
+        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int actual = service.amountMinAverage(purchases);
         int expected = 5;
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCalculateNumberOfMaxMonth() {
-        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    void amountMaxAverage() {
         StatsService service = new StatsService();
-        int actual = service.calculateNumberOfMaxMonth(purchases);
-        int expected = 7;
+        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int actual = service.amountMaxAverage(purchases);
+        int expected = 5;
         assertEquals(expected, actual);
     }
-}
 
+}
 
 
 

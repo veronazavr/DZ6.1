@@ -1,81 +1,74 @@
 package ru.netology.stats;
 
 public class StatsService {
-    public int calculateSum(int[] array) {
-        int sum = 0;
-        for (int item : array) {
-            sum += item;
+    public static void main(String[] args) {
+        int[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+
+    }
+    public static int allAmount(int [] purchases){
+        int amount = 0;
+        for (int purchase:purchases) {
+            amount += purchase;
         }
-        return sum;
+        return amount;
     }
 
-    public int calculateMiddle(int[] array) {
-        int middle = 0;
-        int sum = 0;
-        for (int purchases : array) {
-            sum += purchases;
-        }
-        middle = sum / 12;
-        return middle;
+    public static int amountAverage(int[] purchases) {
+        return allAmount(purchases) / purchases.length;
     }
 
-    public int calculateMaxMonth(int[] array) {
-        int max = 0;
-        int count = 0;
-        int maxMonth = 0;
-        for (int purchases : array) {
-            count +=1;
-            if (max<=purchases) {
-              max=purchases;
-              maxMonth = count;
-          }
-        }
-        return maxMonth;
-    }
-    public int calculateMinMonth(int[] array) {
-        int min = array[0];
-        int count = 0;
-        int minMonth = 0;
-        for (int purchases : array) {
-            count +=1;
-            if (min>purchases) {
-                min=purchases;
-                minMonth = count;
-
+    public static int monthMax(int[] purchases) {
+        int max = purchases[0];
+        int number = 0;
+        int numberMax = 0;
+        for (int purchase : purchases) {
+            number++;
+            if (max <= purchase) {
+                max = purchase;
+                numberMax = number;
             }
         }
-        return minMonth;
+        return numberMax;
     }
-
-    public int calculateNumberOfMinMonth(int[] array) {
-        int middle = 0;
-        int sum = 0;
-        int numberOfMinMonth=0;
-        for (int purchases : array) {
-            sum += purchases;
-        }
-        middle = sum / 12;
-        for (int purchases : array){
-            if (middle>purchases){
-                numberOfMinMonth +=1;
+    public static int monthMin(int[] purchases) {
+        int min = purchases[0];
+        int number = 0;
+        int numberMin = 0;
+        for (int purchase : purchases) {
+            number++;
+            if (min >= purchase) {
+                min = purchase;
+                numberMin = number;
             }
         }
-        return numberOfMinMonth;
+        return numberMin;
     }
-
-    public int calculateNumberOfMaxMonth(int[] array) {
-        int middle = 0;
-        int sum = 0;
-        int numberOfMaxMonth=0;
-        for (int purchases : array) {
-            sum += purchases;
-        }
-        middle = sum / 12;
-        for (int purchases : array){
-            if (middle<=purchases){
-                numberOfMaxMonth +=1;
+    public static int  amountMinAverage(int[] purchases) {
+        int average = amountAverage(purchases);
+        int month = 0;
+        int amountMin = 0;
+        for (int purchase : purchases) {
+            if (purchase < average) {
+                month++;
+                amountMin = month;
             }
         }
-        return numberOfMaxMonth;
+        return amountMin;
     }
+    public static int amountMaxAverage(int[] purchases) {
+        int average = amountAverage(purchases);
+        int month = 0;
+        int amountMax = 0;
+        for (int purchase : purchases) {
+            if (purchase > average) {
+                month++;
+                amountMax = month;
+            }
+        }
+        return amountMax;
+
+
+    }
+
 }
